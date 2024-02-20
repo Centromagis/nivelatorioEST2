@@ -1,0 +1,10 @@
+name: " "
+output_dir: "docs"
+navbar:
+  title: "Introducción a Probabilidad"
+  left:
+    - text: "Tipos de probabilidad"
+      href: recurso302.html
+    - text: "Variables aleatorias"
+      href: recurso303.html
+

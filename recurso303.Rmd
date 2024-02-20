@@ -1,0 +1,515 @@
+---
+title: <span style="color:#034a94"> **Variables aleatorias**</span>
+author: "Nivelatorio de Estadística"
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+```
+
+
+```{r, echo=FALSE, out.width="100%", fig.align = "center"}
+knitr::include_graphics("img/variables.png")
+```
+<sub>Tomada de: https://pixabay.com/ </sub>
+
+<br/>
+
+El concepto de **variable aleatoria** constituye uno de los conceptos principales de la probabilidad y estadística. A este concepto se pueden asociar dos paradigmas de evolución histórica según J.A. Alberth & B. Ruiz (2013). El primero basado en el resultado de fenómenos aleatorios y el segundo, el proceso que relaciona los conjuntos de espacio muestral y sus respectivas probabilidades, para definir el concepto de variable aleatoria como función de números reales y  el espacio para el sustento matemático. 
+
+<br/><br/><br/>
+
+## <span style="color:#034a94">**Variable aleatoria**</span>
+<br/>
+<div class="content-box-blue">
+Una variable aleatoria $X$ es una función que asigna a cada valor de un espacio muestral $S$ un número. El conjunto formado por estos números conforman un subconjunto de los  reales llamado rango de la variable X, ($R_{_{X}}$) 
+</div>
+
+Las variables aleatorias se clasifican teniendo en cuenta las características de su rango en **DISCRETAS** o **CONTINUAS**. La distribución de una variable aleatoria será **UNIVARIADA** si se estudia el comportamiento de una sola variable y será **MULTIVARIADA** si se considera el comportamiento en conjunto de varias variables definidas sobre el mismo espacio muestral.
+
+
+<br/>
+
+Ahora una variable $X$ se considera **DISCRETA** si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores, por lo general procede del conteo y en la gran mayoria de casos empieza por **número de...**
+
+Se considera variable aleatoria  **CONTINUA** si su rango $R_{_{X}}$ es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos. Están asociadas con la medición como son el tiempo, edad, precio, altura, distancia....
+
+<br/>
+
+En todos los casos se caracterizan por 
+
+* $f(x)$ : función de distribución de probabilidad (variables discretas), función de distribución de densidad (variables continuas)
+* $F(x)$ : función de probabilidad acumulada
+* $E[X]$ : valor esperado
+* $V[X]$ : varianza
+* función característica
+* función generadora de momentos
+
+entre otras
+
+<br/>
+
+### <span style="color:#034a94">**Función de probabilidad**</span>
+
+<br/>
+
+Esta función que asigna a cada valor de probabilidad  $f(x)$
+
+<br/>
+
+<div class="content-box-blue">
+|                                           |                                                 |
+| :-----------------------------------------| :-----------------------------------------------|
+| **Caso discreto**                         | **Caso continuo**                               |
+|Para el caso de discreto se denomina **función de distribución de probabilidad** $f(x) = P(X = x)$ y debe cumplir las condiciones: |Para el caso continuo se denomina **función de densidad de probabilidad**|
+| $f(x) = P(X=x) \geq 0$                    |  $f(x) \geq 0$                                               |
+| $\displaystyle\sum_{R_X} f(x) = 1$        |  $\displaystyle\int\limits_{-\infty}^{+\infty}f(x)\:dx =1$   |
+|                                           |  $P(a < X < b)=\displaystyle\int\limits_{a}^{b}f(x)\:dx$     |
+</div>
+
+<br/><br/><br/>
+
+### <span style="color:#034a94"> **Función de probabilidad acumulada**</span>
+
+Corresponde a la probabilidad acumulada para valores menores o iguales a un valor $x$ 
+
+<br/>
+
+<div class="content-box-blue">
+|                                           |                                                 |
+| :-----------------------------------------| :-----------------------------------------------|
+| **Caso discreto**                         | **Caso continuo**                               |
+|$F(x)=P(X\leq x) = \sum _{t \leq x}f(t)$   | $F_{_X}(x) = P(X \leq x)=\displaystyle\int \limits_{-\infty}^{x}f_{_X}(t)\:dt$
+</div>
+
+<br/><br/>
+
+### <span style="color:#034a94">**Valor Esperado**</span>
+
+La esperanza matemática de una variable aleatoria X,  corresponde a un valor que representa el valor más probable que ocurra o la media población de la variable aleatoria denotada por $E[x]$ o también $\mu$.
+
+<br/><br/>
+
+<div class="content-box-blue">
+|                                           |                                                 |
+| :-----------------------------------------| :-----------------------------------------------|
+| **Caso discreto**                         | **Caso continuo**                               |
+| $E(X) = \displaystyle\sum\limits_{x}^{}x_{i}f(x_{i})$ | $E(X) = \displaystyle\int\limits_{-\infty}^{+\infty}x f(x)dx$ |
+</div>
+
+<br/><br/>
+
+#### <span style="color:#034a94">**Propiedades del Valor Esperado**</span>
+
++ $E(k) = k$, para todo numero real $k$.
+
++ $E(kX) = k E(X)$, para todo número real $k$.
+
++ $E(aX + b) = a E(X) + b$, para todo par de números $a$ y $b$
+
++ $E(aX + bY) = a E (X) + b E(Y)$
+
++ $E(XY) = E(X)E(Y)$, 	únicamente en el caso de ser $X$ e $Y$ variables aleatorias independientes
+
+
+<br/><br/>
+
+### <span style="color:#034a94"> **Varianza**</span>
+
+<br/>
+
+Sea $X$ una variable aleatoria discreta o continua. El momento de orden $k$ se define como:
+
+<br/>
+<div class="content-box-blue">
+|                                           |                                                 |
+| :-----------------------------------------| :-----------------------------------------------|
+| **Caso discreto**                         | **Caso continuo**                               |
+| $E(X^{k}) = \displaystyle\sum\limits_{x}^{}x_{i}^{k}f(x_{i})$ |  $E(X^{k}) = \displaystyle\int\limits_{-\infty}^{+\infty}x^{k} f(x)dx$ |
+</div>
+
+<br/><br/>
+
+Se define la varianza como la diferencia entre el segundo momento y el cuadrado del primer momento
+
+$V[X] = E[X^{2}]-(E[X])^{2}  = E[X^{2}]-\mu^{2}$ 
+
+<br/><br/>
+
+#### <span style="color:#034a94">**Propiedades de la varianza**</span>
+
++ $V[X] \geq 0$
+
++ $V[k] = 0$, para todo número real $k$
+
++ $V[X + k]  = V[X]$, para todo número real $k$
+
++ $V[kX] = k^{2}V[X]$, para todo número real $k$ 
+
++ $V[aX + bY] = a^{2}V[X] + b^{2}V[Y] + 2ab \hspace{.2cm}Cov[XY]$, siendo $a$ y $b$ números reales. En el caso de ser $X$ y $Y$ variables aleatorias independientes la igualdad será: $V[aX + bY] = a^{2}V[X] + b^{2}V[Y]$ 
+
+
+<br/><br/>
+
+
+## <span style="color:#034a94"> **Algunos modelos de probabilidad especiales**</span>
+
+<br/><br/>
+
+<div class="content-box-blue">
+|                 |                 |                 |                 |                 |                 | 
+|:----------------|:----------------|:----------------|:----------------|:-----------------:|:---------------|
+| **Discretos**   |                 |                 |                 |                 |                 | 
+| Bernoulli       |   Binomial      | Poisson         | Hipergeométrico | Geométrico      | Binomial negativo|
+|**Continuos**    |                 |                 |                 |                 |                 | 
+| Uniforme        |   Normal        | Exponencial     |  Gamma          |  Weibull        | Cauchy          |
+| Lognormal       |   Beta          | Erlang          |  Gumbel         |  Kernel	        |                 |
+| t-Student       |   F de Fisher   | Ji-cuadrado     |                 |                 |                 |
+|                 |                 |                 |                 |                 |                 | 
+</div>
+
+<br/><br/>
+
+
+## <span style="color:#034a94">**Código R**</span>
+
+
+En $R$ los nombre de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes:
+
+La primera parte es una letra que identifica el propósito de la función.
+<br/><br/>
+
++ *d* : función de distribución de probabilidad $f(x)= P(X=x)$, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad $f(x)$
+
++ *p* : función de probabilidad acumulada $F(x) = P(X \leq x)$
+
++ *q* : percentil $X_p$
+
++ *r* : generador de números aleatorios
+
+<br/><br/>
+
+La siguiene tabla presenta estas las funciones para los principales modelos tanto discretos como continuos
+
+<br/><br/>
+
+
+|*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+|:-------------------|:---------|:---------|:---------|:------------|
+|**discretos**       |          |          |          |             |
+|binomial            | pbinom   | qbinom   | dbinom   | rbinom      |
+|gometrico           | pgeom    | qgeom    | dgeom    | rgeom       |       
+|hipergeometrico     | phyper   | qhyper   | dhyper   | rhyper      |
+|Poisson             | ppois    | qpois    | dpois    | rpois       |
+|binomial negativo   | pnbinom  | qnbinom  | dnbionom | rnbinom     | 
+|**continuos**       |          |          |          |             |  
+|normal              | pnorm    | qnorm    | dnorm    | rnorm       |
+|beta                | pbeta    | qbeta    | dbeta    | rbeta       |
+|Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
+|exponencial         | pexp     | qexp     | dexp     | rexp        |
+|gamma               | pgamma   | qgamma   | dgamma   | rgamma      |
+|lognormal           | plnorm   | qlnorm   | dlnorm   | rlnorm      |
+|uniforme            | punif    | qunif    | dunif    | runif       |
+|Weibull             | pweibull | qweibull | dweibull | rweibull    |
+|t-Student           | pt       | qt       | dt       | rt          |
+|Ji-cuadrado         | pchisq   | qchisq   | dchisq   | rchisq      |
+|F                   | pf       | qf       | df       | rf          |
+
+<br/><br/>
+
+En **R** los nombres de las funciones diseñadas para los cálculos requeridos están conformadas por dos partes: la primera parte con el propósito de la función (primera letra)  y la segunda parte hace referencia al modelo a utilizar (**d** **binom** para el cálculo de probabilidad de una variable aleatoria con distribución binomial)
+
+En cada caso si no recuerda las sintaxis de la función puede hacer uso de las ayudas de R así:
+
+<br/><br/>
+
+```{r, echo=FALSE}
+help("pbinom")
+```
+
+<br/><br/>
+
+|          |                                           |
+|:--------:|:------------------------------------------|
+|	p        | función de distribución acumulada $F(x)$  |
+|	q        | percentil                                 |  
+|	d        | densidad de probabilidad $P(X=x)$         |
+|	r        | variable aleatoria                        |
+
+<br/><br/><br/>
+
+
+
+
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
+
+### Modelo discreto : **binomial**
+
+
+Una variable que se distrbuye binomial es la que procede de un experimento bionomial que se puede describir de la siguiente forma:
+
+* El experimento está compuesto de $n$ ensayos independientes
+* Cada ensayo tiene unicamente dos posibles resultados: **Exito** o **Fracaso**.
+* La probabilidad de Exito se mantiene constante para los $n$ ensayo y es igual a $p$. La probabilidad de Fracaso es : $1-p = q$
+* La variable objeto de estudio es el **número de Exitos consegidos en los $n$ ensayos**
+
+<br/>
+
+
+**Función de distribución de probabilidad**
+
+<div class="content-box-blue">
+$$\begin{equation*}
+		f(x)=\left\lbrace
+		\begin{array}{lll}
+			\displaystyle\binom{n}{x} p^{x} (1-p)^{n-x} &,& x=0,1,2, \ldots, n   \\
+			&&\\
+			0 &,& \mbox{en otro caso}
+		\end{array}
+		\right.
+ \end{equation*}$$
+
+</div>
+
+<br/>
+
+**Valor esperado**
+
+<div class="content-box-blue">
+$$E[X]=np$$
+</div>
+
+<br/>
+
+**Varianza**
+
+<div class="content-box-blue">
+$$V[X]= np(1-p) $$
+</div>
+
+<br/><br/>
+
+Sea la variable $X \sim binom(n=10, p=0.60)$
+
+
+```{r, fig.height=3.5, fig.align='center'}
+library(ggplot2)
+# modelo binomial  ok
+x=0:10
+fx=dbinom(x,10,0.60)
+dat=data.frame(x,fx)
+
+
+ggplot(dat) + geom_point(aes(x, fx),colour = "#FF7F00", size = 2) +
+  scale_x_continuous(limits = c(0, 10),
+                     breaks = c(0,1,2,3,4,5,6,7,8,9,10), 
+                     labels = c('0','1','2','3','4','5','6','7','8','9','10'))
+  
+```
+
+<br/>
+
+Para calcular la probabidad de obtener exactamente 7 exitos,  se evalua en la función de distribución del modelo binomial
+
+
+$$ f(x) = P(X=7) = \dbinom{10}{7} 0.60^{7} (1-0.60)^{(10-7)}$$
+<br/>
+
+En R este calculo se obtiene con la función  `dbinom()`
+
+
+```{r}
+dbinom(7, 10, 0.60)
+```
+
+<br/>
+
+En caso de requerir la probabilidad acumulada para los valores mejores o iguales a 7 (0,1,2,3,4,5,6,7) , se evalua para cada caso el valor correspondiente en la función de distribución binomial y los resultados se suman para obtener el valor total.
+
+
+$$F(x) = P(X \leq 7) = \displaystyle\sum_{x=0}^{x=7} \dbinom{10}{x} 0.60^{x} (1-0.60)^{(10-x)}$$
+<br/>
+
+En R este valor se obtiene mendiante la función `pbinom()`
+
+
+<br/>
+
+```{r}
+pbinom(7, 10, 0.60)
+```
+
+
+
+
+<br/><br/><br/>
+
+
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
+
+### Modelo continuo : **normal**
+
+La distribución normal es uno de los modelos más utilizados en las aplicaciones de la Estadística. Estas aplicaciones están relacionadas con:
+
+Usos de la distribución normal
+
+* La mayoría de variables en la naturaleza, se distribuyen aproximadamente de manera normal
+
+* A partir de la distribución normal se originan las distribuciones $t-student$, $\chi^{2}$ y $F$-Fisher, utilizadas en inferencia estadística
+
+* En general la media muestral de variables que no tienen distribución normal, tiende a aproximarse a una distribución normal, a medida que el tamaño de muestra aumenta. (Teorema del Límite Central) 
+
+* La regla empírica establece que:
+
+    *	Aproximadamente el 68\% de la población se encuentra en el intervalo centrado $$(\mu - \sigma ; \mu + \sigma)$$
+
+		* Aproximadamente el 95\% de la población se encuentra en el intervalo centrado $$(\mu - 2\sigma ; \mu + 2\sigma)$$
+
+		* Aproximadamente el 99.7\% de la población se encuentra en el intervalo centrado $$(\mu - 3\sigma ; \mu + 3\sigma)$$
+
+Su distribución fué planteada por el matemático francés del siglo 18, Abraham de Moivre, quien a partir de la distribución Binomial, con $n=2$ empezó a aumentar su tamaño hasta observar que se formaba una distribución en forma de campana. Este mismo comportamiento fué detectado por Galileo en el siglo 17, al observar los errores producto de sus mediciones en astronomía. El modelo como se conoce actualmente fue propuesto de manera simultánea por los cientificos Robert Adrain y Carl Friedrich Gauss, quien finalmente le dió el nombre.
+
+
+**Función de densidad de probabilidad**
+
+<br/>
+<div class="content-box-blue">
+$$f(x)= \dfrac{1}{\sqrt{2\pi \sigma^{2}}} \hspace{.1cm} \exp{\Bigg\{-\Bigg(\frac{1}{2\sigma^{2}}(x-\mu)^{2}\Bigg)}\Bigg\}	 \hspace{.5cm}  -\infty \leq  x \leq \infty $$  
+</div>	
+
+<br/>
+
+**Valor esperado**
+
+<div class="content-box-blue">
+$$E[X]=\mu$$
+</div>
+
+<br/>
+
+**Varianza**
+
+<div class="content-box-blue">
+$$V[X]=\sigma^{2}$$
+</div>
+
+<br/><br/>
+
+Nornal estandar : $X \sim N(0,1)$
+
+Un caso especial lo constituye la distribución normal con media cero y varianza uno - normal estandar -
+
+
+```{r, fig.height=3.5, fig.align='center'}
+# Distribucion normal
+library(ggfortify)
+
+p=ggdistribution(dnorm, seq(-4, 4, 0.1), mean = 0, sd = 1,colour = "#0EB0C6")
+#p=ggdistribution(dnorm, seq(-4, 8, 0.1), mean = 0, sd = 1.5,colour = "#686868", p=p)
+#ggdistribution(dnorm, seq(-4, 8, 0.1),   mean = 2, sd = 1.5,colour = "#FF7F00", p=p)
+p
+```
+
+
+
+
+<br/>
+
+Ahora supongamos que se tiene una variable continua con distribución normal, con media 50 y varianza 100, es decir desviación estándar 10, lo cual se puede representar como $X\sim N(120,100)$.  En este caso vamos a hallar los siguientes valores: 
+
+
+
+<br/>
+
+```{r, fig.height=3.5, fig.align='center'}
+library(ggfortify)
+ggdistribution(dnorm, seq(30, 210, 0.1), mean = 120, sd = 20,fill = "#0EB0C6")
+```
+
+<br/>
+
+En este caso si se requiere calcular la probabilidad de obtener valores menores o iguales a 70 ( $F(100)$), dado que esta probabilidad corresponde a un área bajo la curva de la función delimitada por 70 que se obtiene mediante la integral de $f(x)$. 
+
+<br/>
+
+$$P(X \leq 100) = F(100) =\displaystyle\int_{-\infty}^{100} \dfrac{1}{\sqrt{800 \pi }} \exp\Big\{-\frac{1}{800 }(x-120)^{2}\Big\} \:dx$$
+
+<br/>
+
+En R se utiliza la función `pnorm()` para realizar este calculo
+
+<br/>
+
+
+```{r}
+pnorm(100,120,20)
+```
+
+<br/>
+
+En el caso de requerir la probabilidad de obtener un valor superior a 70, se requiere calcular la integral desde 70 a mas infinito
+
+$$P(X>100) =\displaystyle\int_{100}^{\infty} \dfrac{1}{\sqrt{800 \pi }} \exp\Big\{-\frac{1}{800 }(x-120)^{2}\Big\} \:dx$$
+
+<br/>
+
+
+En R esta probabilidad se puede obtener con la funcion `pnorm()` de dos formas
+ 
+```{r}
+pnorm(100,120,20,lower.tail=FALSE)
+1-pnorm(100,120, 20)
+
+
+```
+
+<br/><br/>
+
+### <span style="color:#034a94"> **Generación de números aleatorios asociados a una distribución de probabilidad**</span>
+
+Una de las herramientas que nos permite la validación de propidedades y teoremas, además de realizar procedimenientos estadisticos de manera sintetica, es la simulación.
+
+Este procedimiento consiste en generar de manera artificial valores asociados auna distribución de probabilidad.
+
+<br/><br/>
+
+### <span style="color:#FF7F00">**Ejemplo**</span>
+
+El número de articulos defectuosos encontrados en casas de 10 unidades se puede simular a partir del conocimiento de los parámetros n y p de una distribución binomial.
+
+Supongamos que n=10 (número de unidades por paquete) y p=0.10 probabilidad de éxito, en este caso de encontrar un artículo defectuoso
+
+
+Simulemos 100 valores que podrían corresponde al resultado de la revisión de 100 cajas 
+
+```{r}
+rbinom(100, 10, 0.10)
+```
+
+<br/><br/>
+
+### <span style="color:#FF7F00">**Ejemplo**</span>
+
+
+Para el caso de la distribició normal, simulemos el resultado de una prueba realizada por 100 estudiantes. Para ello se requiere conocer el valor de los parámetros asociados a ese modelo ( $\mu$ y $\sigma^2$ )
+
+Para el caso supongamos que $\mu = 120$ y $\sigma = 20$
+
+```{r}
+# round() , función para redondear a cero cifras decimanes
+round(rnorm(100,120,20),0) 
+
+
+```
+
+
+
+
+
+
+
+

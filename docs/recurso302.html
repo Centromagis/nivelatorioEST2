@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Nivelatorio de Estadística" />
+
+
+<title> Tipos de probabilidad</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introducción a Probabilidad</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="recurso302.html">Tipos de probabilidad</a>
+</li>
+<li>
+  <a href="recurso303.html">Variables aleatorias</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore"><span style="color:#034a94"> <strong>Tipos
+de probabilidad</strong></span></h1>
+<h4 class="author">Nivelatorio de Estadística</h4>
+
+</div>
+
+
+<p><br/><br/></p>
+<div id="ejemplo" class="section level3">
+<h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
+<p>Iniciaremos con una tabla cruzada o de doble entrada que representa
+los valores obtenidos para dos características cualitativas
+<strong>A</strong> y <strong>B</strong> para 900 registros</p>
+<p><br/><br/></p>
+<center>
+<strong>Tabla 2.1</strong> Distribución de las frecuencias absolutas de
+<strong>A</strong> y <strong>B</strong>
+</center>
+<p><img src="img/tabla2_22a.png" width="50%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># se crea la tabla 
+x=c(460,140,40,260)
+t=matrix(x,nrow=2)
+colnames(t)=c(&quot;A&quot;,&quot;A&#39;&quot;)
+rownames(t)=c(&quot;B&quot;,&quot;B&#39;&quot;)
+addmargins(t)</code></pre>
+<pre><code>      A  A&#39; Sum
+B   460  40 500
+B&#39;  140 260 400
+Sum 600 300 900</code></pre>
+<p><br/><br/></p>
+<p>A partir de estos valores se obtienen probabilidades bajo el
+<strong>enfoque frecuentista</strong></p>
+<p><br/><br/></p>
+<center>
+<strong>Tabla 2.2</strong> Distribución frecuencias relativas de
+<strong>A</strong> y <strong>B</strong>
+</center>
+<p><img src="img/tabla4_22a.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><br/><br/><br/></p>
+</div>
+<div id="probabilidad-marginal-o-simple" class="section level3">
+<h3><span style="color:#034a94"><strong>Probabilidad marginal o
+simple</strong></span></h3>
+<p>Corresponde a la probabilidad de que ocurra un evento simple. También
+se le llama marginal debido a que aparece en el margen de las tablas o
+totales por fila o por columna</p>
+<p><br/></p>
+<ul>
+<li><p><span class="math inline">\(P(A) = 600/900 = 0.667\)</span> :
+probabilidad de que ocurra <span
+class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(P(A&#39;) = 300/900 = 0.333\)</span>
+: probabilidad de que no ocurra <span
+class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(P(B) = 500/900 = 0.556\)</span> :
+probabilidad de que ocurra <span
+class="math inline">\(B\)</span></p></li>
+<li><p><span class="math inline">\(P(B&#39;) = 400/900 = 0.444\)</span>
+: probabilidad de que no ocurra <span
+class="math inline">\(B\)</span></p></li>
+</ul>
+<p><br/><br/><br/></p>
+</div>
+<div id="probabilidad-conjunta" class="section level3">
+<h3><span style="color:#034a94"><strong>Probabilidad
+conjunta</strong></span></h3>
+<p>Esta probabilidad ocurre cuando los dos eventos ocurren a la vez al
+mismo tiempo</p>
+<p><br/></p>
+<ul>
+<li><p><span class="math inline">\(P(A \cap B) = 460/900 =
+0.511\)</span> : probabilidad de que ocurra <span
+class="math inline">\(A\)</span> y <span
+class="math inline">\(B\)</span></p></li>
+<li><p><span class="math inline">\(P(A&#39; \cap B) = 40/900 =
+0.044\)</span> : probabilidad de que NO ocurra <span
+class="math inline">\(A\)</span> y ocurra <span
+class="math inline">\(B\)</span></p></li>
+<li><p><span class="math inline">\(P(A \cap B&#39;) = 140/900 =
+0.156\)</span> : probabilidad de que ocurra <span
+class="math inline">\(A\)</span> y NO ocurra <span
+class="math inline">\(B\)</span></p></li>
+<li><p><span class="math inline">\(P(A&#39; \cap B&#39;) = 260/900 =
+0.289\)</span> : probabilidad de que NO ocurra <span
+class="math inline">\(A\)</span> ni <span
+class="math inline">\(B\)</span></p></li>
+</ul>
+<p><br/><br/><br/></p>
+</div>
+<div id="probabilidad-condicional" class="section level3">
+<h3><span style="color:#034a94"><strong>Probabilidad
+condicional</strong></span></h3>
+<p><br/></p>
+<p>En la mayoría de los casos cuando queremos calcular una probabilidad
+conocemos eventos que los afectan. A las probabilidades que toman
+información sobre la ocurrencia o no de eventos relacionados se les
+conoce como probabilidades condicionales.</p>
+<div class="content-box-blue">
+<p>La probabilidad condicional de <span
+class="math inline">\(B\)</span>, dado <span
+class="math inline">\(A\)</span>, se denota como <span
+class="math inline">\(P(B|A)\)</span>, se define como:</p>
+<p><span class="math display">\[P(B|A)=\dfrac{P(A \cap
+B)}{P(A)}\]</span></p>
+</div>
+<center>
+<img src="img/arbol1_22.png" width="80%" style="display: block; margin: auto;" />
+</br> <strong>Figura 2.2</strong> Arbol de probabilidades
+</center>
+<p><br/><br/></p>
+<ul>
+<li><span class="math inline">\(P(B|A)=\dfrac{P(A \cap B)}{P(A)} =
+\dfrac{460/900}{600/900} = \dfrac{460}{600} = 0.767\)</span></li>
+</ul>
+<p><br/></p>
+<p>La probabilidad de que ocurra <span class="math inline">\(B\)</span>
+dado que ya sucedió <span class="math inline">\(A\)</span> es de
+0.767</p>
+<p><br/><br/><br/></p>
+</div>
+<div id="independencia-de-eventos" class="section level3">
+<h3><span style="color:#034a94"><strong>Independencia de
+eventos</strong></span></h3>
+<p><br/></p>
+<p>En el caso que se requiera evaluar si dos eventos son independientes
+o no, partiendo de la definición de probabilidad condicional se podría
+obtener la siguiente regla al despejar <span class="math inline">\(P(A
+\cap B)\)</span> de la ecuación para obtener : <span
+class="math inline">\(P(A \cap B) = P(A)∗P(B|A)\)</span>. En caso de que
+la ocurrencia del evento <span class="math inline">\(A\)</span>
+previamente al evento <span class="math inline">\(B\)</span>, no cambie
+su probabilidad, se podría escribir que <span
+class="math inline">\(P(B|A)=P(B)\)</span> y en este caso la regla
+indica que la probabilidad conjunta de los eventos <span
+class="math inline">\(A\)</span> y <span
+class="math inline">\(B\)</span> es igual a la probabilidad de sus
+probabilidades marginales :</p>
+<p><br/><br/></p>
+<div class="content-box-blue">
+<p>Dos eventos <span class="math inline">\(A\)</span> y <span
+class="math inline">\(B\)</span> son independientes si y solo si la
+probabilidad del evento <span class="math inline">\(B\)</span> no es
+afectada por la ocurrencia del evento A o viceversa.</p>
+<p><span class="math display">\[P(B|A) = \dfrac{P( A \cap B)}{P(A)} =
+P(B)\]</span></p>
+<p><span class="math display">\[P(A∩B)= P(A) \hspace{.2cm} P(B|A) = P(A)
+\hspace{.2cm} P(B)\]</span></p>
+</div>
+<p><br/><br/><br/></p>
+</div>
+<div id="probabilidad-total" class="section level3">
+<h3><span style="color:#034a94"><strong>Probabilidad
+total</strong></span></h3>
+<p><br/></p>
+<p>Para explicar el concepto de probabilidad total, supongamos que el
+espacio muestral está formado por elementos que pueden ser representados
+por una partición del conjunto <span class="math inline">\(S\)</span>.
+Para este ejemplo con 5 particiones (<span
+class="math inline">\(A_{1}\)</span>, <span
+class="math inline">\(A_{2}\)</span>, <span
+class="math inline">\(A_{3}\)</span>, <span
+class="math inline">\(A_{4}\)</span> y <span
+class="math inline">\(A_{5}\)</span>). Sobre este espacio se define un
+evento aleatorio <span class="math inline">\(B\)</span></p>
+<center>
+<p><img src="img/particion2_1122.png" width="100%" style="display: block; margin: auto;" />
+</br></p>
+<strong>Figura 2.2</strong> Partición del espacio muestral
+</center>
+<p></br></br></p>
+<p>Se puede resaltar los conjutos que conforman el evento <span
+class="math inline">\(B\)</span></p>
+<center>
+<img src="img/particion3_1122.png" width="100%" style="display: block; margin: auto;" />
+</br> <strong>Figura 2.3</strong> Evento B como la unión de
+intercepciones <span class="math inline">\(A_{i} \cap B\)</span>
+</center>
+<p><br/><br/></p>
+<p>Tambien podemos recostruir <span class="math inline">\(B\)</span>
+como :</p>
+<p><span class="math inline">\(B = (A_{1} \cap B) \cup (A_{2} \cap B)
+\cup (A_{3} \cap B) \cup (A_{4} \cap B) \cup (A_{5} \cap B)\)</span></p>
+<p><br/><br/></p>
+<p>En términos de probabilidad tenemos</p>
+<p><span class="math inline">\(P(B) = P(A_{1} \cap B) + P(A_{2} \cap B)
++ P(A_{3} \cap B) + P(A_{4} \cap B) + P(A_{5} \cap B)\)</span></p>
+<p>Este resultado se puede expresar en otros términos de la regla de la
+multiplicación:</p>
+<p><span class="math inline">\(P(B) = P(A_{1})P(B|A_{1}) +
+P(A_{2})P(B|A_{2}) +P(A_{3})P(B|A_{}) + P(A_{4})P(B|A_{4}) +
+P(A_{5})P(B|A_{5})\)</span></p>
+<p><br/><br/><br/> Definimos la probabilidad total de manera
+general:</p>
+<div class="content-box-blue">
+<p>Dado una serie de eventos que conforman una partición <span
+class="math inline">\(E_{1}\)</span>, <span
+class="math inline">\(E_{2}\)</span>, <span
+class="math inline">\(E_{3}\)</span>, <span
+class="math inline">\(\dots\)</span>, <span
+class="math inline">\(E_{k}\)</span>, que son mutuamente excluyentes y
+exhaustivos y un evento <span class="math inline">\(A\)</span>, la
+probabilidad del evento <span class="math inline">\(A\)</span> se
+expresa como :</p>
+<p><span class="math display">\[P(A)=P(E_{1})P(A|E_{1})+
+P(E_{2})P(A|E_{2})+ P(E_{3})P(A|E_{3})+ \dots
+P(E_{k})P(A|E_{k})\]</span></p>
+</div>
+<p><br/><br/><br/></p>
+</div>
+<div id="teorema-de-bayes" class="section level3">
+<h3><span style="color:#034a94"><strong>Teorema de
+Bayes</strong></span></h3>
+<p>El <strong>teorema de Bayes</strong>, fue propuesto por el matemático
+británico Thomas Bayes, es una relación que permite determinar la
+probabilidad condicional. La probabilidad condicional es la probabilidad
+de que ocurra un resultado, basado en un resultado previo. El
+<strong>teorema de Bayes</strong> permite ajustar las probabilidades
+dada nueva información.</p>
+<div class="content-box-blue">
+<p>Dado una serie de eventos que conforma una partición <span
+class="math inline">\(E_{1}\)</span>, <span
+class="math inline">\(E_{2}\)</span>, <span
+class="math inline">\(E_{3}\)</span>, <span
+class="math inline">\(\dots\)</span>, <span
+class="math inline">\(E_{k}\)</span> , que son mutuamente excluyentes y
+exhaustivos, con probabilidad a priori <span
+class="math inline">\(P(E_{1})\)</span>, <span
+class="math inline">\(P(E_{2})\)</span> <span
+class="math inline">\(P(E_{3})\)</span>, <span
+class="math inline">\(\dots\)</span>, <span
+class="math inline">\(P(E_{k})\)</span>. Si ocurre un evento <span
+class="math inline">\(A\)</span>, la probabilidad a posteriori de <span
+class="math inline">\(E_{i}\)</span> dados <span
+class="math inline">\(A\)</span>, es la probabilidad condicional :</p>
+<p><span class="math display">\[P(E_{i}|A)=\dfrac{P(E_{i} \cap
+A)}{P(A)}= \dfrac{P(E_{i}) P(A|E_{i})}{\displaystyle\sum_{j=1}^{k}
+P(E_{j})P(A|E_{j})} \]</span></p>
+</div>
+<p><br/><br/><br/></p>
+</div>
+<div id="código-r" class="section level3">
+<h3><span style="color:#034a94"><strong>Código R</strong></span></h3>
+<p><br/></p>
+<p>Construcción de la tabla</p>
+<pre class="r"><code># se crea la tabla 
+x=c(460,140,40,260)
+t=matrix(x,nrow=2)
+rownames(t)=c(&quot;A&quot;,&quot;A&#39;&quot;)
+colnames(t)=c(&quot;B&quot;,&quot;B&#39;&quot;)
+t</code></pre>
+<pre><code>     B  B&#39;
+A  460  40
+A&#39; 140 260</code></pre>
+<p><br/><br/></p>
+<p>Se adicionan los totales</p>
+<pre class="r"><code># adiciona los totales por filas y por columnas
+addmargins(t)</code></pre>
+<pre><code>      B  B&#39; Sum
+A   460  40 500
+A&#39;  140 260 400
+Sum 600 300 900</code></pre>
+<p><br/><br/></p>
+<p>Se calculan las probabilidades conjuntas</p>
+<pre class="r"><code># probabilidades conjuntas
+prop.table(t)</code></pre>
+<pre><code>           B         B&#39;
+A  0.5111111 0.04444444
+A&#39; 0.1555556 0.28888889</code></pre>
+<p><br/><br/></p>
+<p>Se calculan las probabilidades marginales por filas</p>
+<pre class="r"><code># probabilidades condicionales por fila
+prop.table(t,1)</code></pre>
+<pre><code>      B   B&#39;
+A  0.92 0.08
+A&#39; 0.35 0.65</code></pre>
+<p><br/><br/></p>
+<p>Se calculan las probabilidades marginales por columnas</p>
+<pre class="r"><code># probabilidades condiccionales por columna
+prop.table(t,2)</code></pre>
+<pre><code>           B        B&#39;
+A  0.7666667 0.1333333
+A&#39; 0.2333333 0.8666667</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="aplicación" class="section level3">
+<h3><span style="color:#034a94"><strong>Aplicación</strong></span></h3>
+<p><br/></p>
+<p>Podemos representar las probabilidades mediante un árbol. Como
+ejemplo tomamos la base de datos del titanic contenida en el paquete
+<code>titanic</code> y calculamos la probabilidad de que un pasajero
+sobreviviera teniendo en cuenta su sexo.</p>
+<center>
+<pre class="r"><code># install.packages(&quot;rpart&quot;)
+# install.packages(&quot;rattle&quot;)
+#install.packages(&quot;rpart.plot&quot;)
+library(readr)
+library(rpart)
+library(rattle)
+library(rpart.plot)
+library(paqueteNIV)
+data(&quot;titanic3&quot;)
+
+sobrevive.model &lt;- rpart(survived ~ ., data = ptitanic, cp = .02)
+rpart.plot(sobrevive.model,
+           main = &quot;Árbol de sobrevivientes Titanic&quot;)</code></pre>
+<img src="recurso302_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+</br> <strong>Figura 2.4</strong> Árbol de probabilidades
+</center>
+<p><br/><br/></p>
+<p>En el primer nivel de información hace referencia a la probabilidad
+de sobrevivir (0.38)</p>
+<pre class="r"><code>t=table(titanic3$survived)
+prop.table(t)</code></pre>
+<pre><code>
+       0        1 
+0.618029 0.381971 </code></pre>
+<ul>
+<li><p><span class="math inline">\(P(\text{survived} = 1) =
+0.381971\)</span> : probabilidad de sobrevivir en un accidente
+similar</p></li>
+<li><p><span class="math inline">\(P(\text{survived} = 0) =
+0.618029\)</span> : probabilidad de no sobrevivir en un acdidente
+similar</p></li>
+</ul>
+<p><br/><br/></p>
+<p>En el segundo nivel se representan las probabilidades condicionales a
+partir de conocer que el pasajero sobrevivió, con relación al sexo .</p>
+<p><br/></p>
+<pre class="r"><code>t2=table(titanic3$survived,titanic3$sex)
+prop.table(t2,2)</code></pre>
+<pre><code>   
+       female      male
+  0 0.2725322 0.8090154
+  1 0.7274678 0.1909846</code></pre>
+<p><br/></p>
+<ul>
+<li><p><span class="math inline">\(P(\text{female}|\text{survived}) =
+0.72746778\)</span> : si conocemos que sobrevivió, la probabilidad de
+que sea una mujer</p></li>
+<li><p><span class="math inline">\(P(\text{male}|\text{survived}) =
+0.1909846\)</span> : si se conoce que sobrevivió, la probabilidad de que
+sea hombre</p></li>
+</ul>
+<p><br/><br/></p>
+<p>El árbol presenta las probabilidades condicionales a medida que se
+desagregan las ramas</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
