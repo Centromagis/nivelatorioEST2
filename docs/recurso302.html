@@ -14,7 +14,7 @@
 
 <title> Tipos de probabilidad</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -286,14 +286,14 @@ de probabilidad</strong></span></h1>
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p>Iniciaremos con una tabla cruzada o de doble entrada que representa
 los valores obtenidos para dos características cualitativas
-<strong>A</strong> y <strong>B</strong> para 900 registros</p>
+<strong>A</strong> y <strong>B</strong> para 900 registros.</p>
 <p><br/><br/></p>
 <center>
 <strong>Tabla 2.1</strong> Distribución de las frecuencias absolutas de
 <strong>A</strong> y <strong>B</strong>
 </center>
 <p><img src="img/tabla2_22a.png" width="50%" style="display: block; margin: auto;" /></p>
-<pre class="r"><code># se crea la tabla 
+<pre class="r"><code># Se crea la tabla 
 x=c(460,140,40,260)
 t=matrix(x,nrow=2)
 colnames(t)=c(&quot;A&quot;,&quot;A&#39;&quot;)
@@ -323,16 +323,16 @@ totales por fila o por columna</p>
 <p><br/></p>
 <ul>
 <li><p><span class="math inline">\(P(A) = 600/900 = 0.667\)</span> :
-probabilidad de que ocurra <span
+Probabilidad de que ocurra <span
 class="math inline">\(A\)</span></p></li>
 <li><p><span class="math inline">\(P(A&#39;) = 300/900 = 0.333\)</span>
-: probabilidad de que no ocurra <span
+: Probabilidad de que no ocurra <span
 class="math inline">\(A\)</span></p></li>
 <li><p><span class="math inline">\(P(B) = 500/900 = 0.556\)</span> :
-probabilidad de que ocurra <span
+Probabilidad de que ocurra <span
 class="math inline">\(B\)</span></p></li>
 <li><p><span class="math inline">\(P(B&#39;) = 400/900 = 0.444\)</span>
-: probabilidad de que no ocurra <span
+: Probabilidad de que no ocurra <span
 class="math inline">\(B\)</span></p></li>
 </ul>
 <p><br/><br/><br/></p>
@@ -449,10 +449,10 @@ class="math inline">\(B\)</span></p>
 <center>
 <img src="img/particion3_1122.png" width="100%" style="display: block; margin: auto;" />
 </br> <strong>Figura 2.3</strong> Evento B como la unión de
-intercepciones <span class="math inline">\(A_{i} \cap B\)</span>
+intersecciones <span class="math inline">\(A_{i} \cap B\)</span>
 </center>
 <p><br/><br/></p>
-<p>Tambien podemos recostruir <span class="math inline">\(B\)</span>
+<p>También podemos reconstruir <span class="math inline">\(B\)</span>
 como :</p>
 <p><span class="math inline">\(B = (A_{1} \cap B) \cup (A_{2} \cap B)
 \cup (A_{3} \cap B) \cup (A_{4} \cap B) \cup (A_{5} \cap B)\)</span></p>
@@ -463,7 +463,7 @@ como :</p>
 <p>Este resultado se puede expresar en otros términos de la regla de la
 multiplicación:</p>
 <p><span class="math inline">\(P(B) = P(A_{1})P(B|A_{1}) +
-P(A_{2})P(B|A_{2}) +P(A_{3})P(B|A_{}) + P(A_{4})P(B|A_{4}) +
+P(A_{2})P(B|A_{2})  +P(A_{3})P(B|A_{})  + P(A_{4})P(B|A_{4}) +
 P(A_{5})P(B|A_{5})\)</span></p>
 <p><br/><br/><br/> Definimos la probabilidad total de manera
 general:</p>
@@ -507,7 +507,7 @@ class="math inline">\(\dots\)</span>, <span
 class="math inline">\(P(E_{k})\)</span>. Si ocurre un evento <span
 class="math inline">\(A\)</span>, la probabilidad a posteriori de <span
 class="math inline">\(E_{i}\)</span> dados <span
-class="math inline">\(A\)</span>, es la probabilidad condicional :</p>
+class="math inline">\(A\)</span>, es la probabilidad condicional:</p>
 <p><span class="math display">\[P(E_{i}|A)=\dfrac{P(E_{i} \cap
 A)}{P(A)}= \dfrac{P(E_{i}) P(A|E_{i})}{\displaystyle\sum_{j=1}^{k}
 P(E_{j})P(A|E_{j})} \]</span></p>
@@ -573,7 +573,7 @@ library(readr)
 library(rpart)
 library(rattle)
 library(rpart.plot)
-library(paqueteNIV)
+# library(paqueteNIV)
 data(&quot;titanic3&quot;)
 
 sobrevive.model &lt;- rpart(survived ~ ., data = ptitanic, cp = .02)
@@ -585,24 +585,30 @@ rpart.plot(sobrevive.model,
 <p><br/><br/></p>
 <p>En el primer nivel de información hace referencia a la probabilidad
 de sobrevivir (0.38)</p>
-<pre class="r"><code>t=table(titanic3$survived)
+<pre class="r"><code>titanic3 &lt;- load(&quot;data/titanic3.rda&quot;)
+
+#t=table(titanic3$survived)
+
+
+
 prop.table(t)</code></pre>
-<pre><code>
-       0        1 
-0.618029 0.381971 </code></pre>
+<pre><code>           B         B&#39;
+A  0.5111111 0.04444444
+A&#39; 0.1555556 0.28888889</code></pre>
 <ul>
 <li><p><span class="math inline">\(P(\text{survived} = 1) =
-0.381971\)</span> : probabilidad de sobrevivir en un accidente
+0.381971\)</span> : Probabilidad de sobrevivir en un accidente
 similar</p></li>
 <li><p><span class="math inline">\(P(\text{survived} = 0) =
-0.618029\)</span> : probabilidad de no sobrevivir en un acdidente
+0.618029\)</span> : Probabilidad de no sobrevivir en un accidente
 similar</p></li>
 </ul>
 <p><br/><br/></p>
 <p>En el segundo nivel se representan las probabilidades condicionales a
-partir de conocer que el pasajero sobrevivió, con relación al sexo .</p>
+partir de conocer que el pasajero sobrevivió, con relación al sexo.</p>
 <p><br/></p>
-<pre class="r"><code>t2=table(titanic3$survived,titanic3$sex)
+<pre class="r"><code>load(&quot;data/titanic3.rda&quot;)
+t2=table(titanic3$survived,titanic3$sex)
 prop.table(t2,2)</code></pre>
 <pre><code>   
        female      male
@@ -611,10 +617,10 @@ prop.table(t2,2)</code></pre>
 <p><br/></p>
 <ul>
 <li><p><span class="math inline">\(P(\text{female}|\text{survived}) =
-0.72746778\)</span> : si conocemos que sobrevivió, la probabilidad de
+0.72746778\)</span> : Si conocemos que sobrevivió, la probabilidad de
 que sea una mujer</p></li>
 <li><p><span class="math inline">\(P(\text{male}|\text{survived}) =
-0.1909846\)</span> : si se conoce que sobrevivió, la probabilidad de que
+0.1909846\)</span> : Si se conoce que sobrevivió, la probabilidad de que
 sea hombre</p></li>
 </ul>
 <p><br/><br/></p>

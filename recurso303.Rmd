@@ -34,7 +34,7 @@ Las variables aleatorias se clasifican teniendo en cuenta las características d
 
 <br/>
 
-Ahora una variable $X$ se considera **DISCRETA** si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores, por lo general procede del conteo y en la gran mayoria de casos empieza por **número de...**
+Ahora una variable $X$ se considera **DISCRETA** si su rango $R_{_{X}}$ es un conjunto finito o infinito numerable de valores, por lo general procede del conteo y en la gran mayoría de casos empieza por **número de...**
 
 Se considera variable aleatoria  **CONTINUA** si su rango $R_{_{X}}$ es un conjunto de valores infinito no numerable y generalmente corresponde a unión de intervalos. Están asociadas con la medición como son el tiempo, edad, precio, altura, distancia....
 
@@ -42,12 +42,12 @@ Se considera variable aleatoria  **CONTINUA** si su rango $R_{_{X}}$ es un conju
 
 En todos los casos se caracterizan por 
 
-* $f(x)$ : función de distribución de probabilidad (variables discretas), función de distribución de densidad (variables continuas)
-* $F(x)$ : función de probabilidad acumulada
-* $E[X]$ : valor esperado
-* $V[X]$ : varianza
-* función característica
-* función generadora de momentos
+* $f(x)$ : Función de distribución de probabilidad (variables discretas), función de distribución de densidad (variables continuas)
+* $F(x)$ : Función de probabilidad acumulada
+* $E[X]$ : Valor esperado
+* $V[X]$ : Varianza
+* Función característica
+* Función generadora de momentos
 
 entre otras
 
@@ -113,7 +113,7 @@ La esperanza matemática de una variable aleatoria X,  corresponde a un valor qu
 
 + $E(aX + bY) = a E (X) + b E(Y)$
 
-+ $E(XY) = E(X)E(Y)$, 	únicamente en el caso de ser $X$ e $Y$ variables aleatorias independientes
++ $E(XY) = E(X)E(Y)$,	únicamente en el caso de ser $X$ e $Y$ variables aleatorias independientes
 
 
 <br/><br/>
@@ -183,30 +183,30 @@ En $R$ los nombre de las funciones diseñadas para los cálculos requeridos est�
 La primera parte es una letra que identifica el propósito de la función.
 <br/><br/>
 
-+ *d* : función de distribución de probabilidad $f(x)= P(X=x)$, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad $f(x)$
++ *d* : Función de distribución de probabilidad $f(x)= P(X=x)$, para el caso discreto. En el caso de las variables continuas representa la función de densidad de probabilidad $f(x)$
 
-+ *p* : función de probabilidad acumulada $F(x) = P(X \leq x)$
++ *p* : Función de probabilidad acumulada $F(x) = P(X \leq x)$
 
-+ *q* : percentil $X_p$
++ *q* : Percentil $X_p$
 
-+ *r* : generador de números aleatorios
-
-<br/><br/>
-
-La siguiene tabla presenta estas las funciones para los principales modelos tanto discretos como continuos
++ *r* : Generador de números aleatorios
 
 <br/><br/>
 
+La siguiente tabla presenta estas las funciones para los principales modelos tanto discretos como continuos
 
-|*modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
+<br/><br/>
+
+
+|*Modelo*            |  $F(x)$  |  $X_{p}$ |  $f(x)$  | aleatorio   |
 |:-------------------|:---------|:---------|:---------|:------------|
-|**discretos**       |          |          |          |             |
+|**Discretos**       |          |          |          |             |
 |binomial            | pbinom   | qbinom   | dbinom   | rbinom      |
 |gometrico           | pgeom    | qgeom    | dgeom    | rgeom       |       
 |hipergeometrico     | phyper   | qhyper   | dhyper   | rhyper      |
 |Poisson             | ppois    | qpois    | dpois    | rpois       |
 |binomial negativo   | pnbinom  | qnbinom  | dnbionom | rnbinom     | 
-|**continuos**       |          |          |          |             |  
+|**Continuos**       |          |          |          |             |  
 |normal              | pnorm    | qnorm    | dnorm    | rnorm       |
 |beta                | pbeta    | qbeta    | dbeta    | rbeta       |
 |Cauchy              | pcauchy  | qcauchy  | dcauchy  | rcauchy     |
@@ -235,10 +235,10 @@ help("pbinom")
 
 |          |                                           |
 |:--------:|:------------------------------------------|
-|	p        | función de distribución acumulada $F(x)$  |
-|	q        | percentil                                 |  
-|	d        | densidad de probabilidad $P(X=x)$         |
-|	r        | variable aleatoria                        |
+|	p        | Función de distribución acumulada $F(x)$  |
+|	q        | Percentil                                 |  
+|	d        | Densidad de probabilidad $P(X=x)$         |
+|	r        | Variable aleatoria                        |
 
 <br/><br/><br/>
 
@@ -250,11 +250,11 @@ help("pbinom")
 ### Modelo discreto : **binomial**
 
 
-Una variable que se distrbuye binomial es la que procede de un experimento bionomial que se puede describir de la siguiente forma:
+Una variable que se distribuye binomial es la que procede de un experimento binomial que se puede describir de la siguiente forma:
 
 * El experimento está compuesto de $n$ ensayos independientes
-* Cada ensayo tiene unicamente dos posibles resultados: **Exito** o **Fracaso**.
-* La probabilidad de Exito se mantiene constante para los $n$ ensayo y es igual a $p$. La probabilidad de Fracaso es : $1-p = q$
+* Cada ensayo tiene únicamente dos posibles resultados: **Exito** o **Fracaso**.
+* La probabilidad de Éxito se mantiene constante para los $n$ ensayo y es igual a $p$. La probabilidad de Fracaso es : $1-p = q$
 * La variable objeto de estudio es el **número de Exitos consegidos en los $n$ ensayos**
 
 <br/>
@@ -313,7 +313,7 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "#FF7F00", size = 2) +
 
 <br/>
 
-Para calcular la probabidad de obtener exactamente 7 exitos,  se evalua en la función de distribución del modelo binomial
+Para calcular la probabilidad de obtener exactamente 7 éxitos,  se evalúa en la función de distribución del modelo binomial
 
 
 $$ f(x) = P(X=7) = \dbinom{10}{7} 0.60^{7} (1-0.60)^{(10-7)}$$
@@ -371,7 +371,7 @@ Usos de la distribución normal
 
 		* Aproximadamente el 99.7\% de la población se encuentra en el intervalo centrado $$(\mu - 3\sigma ; \mu + 3\sigma)$$
 
-Su distribución fué planteada por el matemático francés del siglo 18, Abraham de Moivre, quien a partir de la distribución Binomial, con $n=2$ empezó a aumentar su tamaño hasta observar que se formaba una distribución en forma de campana. Este mismo comportamiento fué detectado por Galileo en el siglo 17, al observar los errores producto de sus mediciones en astronomía. El modelo como se conoce actualmente fue propuesto de manera simultánea por los cientificos Robert Adrain y Carl Friedrich Gauss, quien finalmente le dió el nombre.
+Su distribución fue planteada por el matemático francés del siglo 18, Abraham de Moivre, quien a partir de la distribución Binomial, con $n=2$ empezó a aumentar su tamaño hasta observar que se formaba una distribución en forma de campana. Este mismo comportamiento fué detectado por Galileo en el siglo 17, al observar los errores producto de sus mediciones en astronomía. El modelo como se conoce actualmente fue propuesto de manera simultánea por los científicos Robert Adrain y Carl Friedrich Gauss, quien finalmente le dio el nombre.
 
 
 **Función de densidad de probabilidad**
@@ -471,15 +471,15 @@ pnorm(100,120,20,lower.tail=FALSE)
 
 ### <span style="color:#034a94"> **Generación de números aleatorios asociados a una distribución de probabilidad**</span>
 
-Una de las herramientas que nos permite la validación de propidedades y teoremas, además de realizar procedimenientos estadisticos de manera sintetica, es la simulación.
+Una de las herramientas que nos permite la validación de propiedades y teoremas, además de realizar procedimientos estadísticos de manera sintética, es la simulación.
 
-Este procedimiento consiste en generar de manera artificial valores asociados auna distribución de probabilidad.
+Este procedimiento consiste en generar de manera artificial valores asociados a una distribución de probabilidad.
 
 <br/><br/>
 
 ### <span style="color:#FF7F00">**Ejemplo**</span>
 
-El número de articulos defectuosos encontrados en casas de 10 unidades se puede simular a partir del conocimiento de los parámetros n y p de una distribución binomial.
+El número de artículos defectuosos encontrados en casas de 10 unidades se puede simular a partir del conocimiento de los parámetros n y p de una distribución binomial.
 
 Supongamos que n=10 (número de unidades por paquete) y p=0.10 probabilidad de éxito, en este caso de encontrar un artículo defectuoso
 
@@ -495,12 +495,12 @@ rbinom(100, 10, 0.10)
 ### <span style="color:#FF7F00">**Ejemplo**</span>
 
 
-Para el caso de la distribició normal, simulemos el resultado de una prueba realizada por 100 estudiantes. Para ello se requiere conocer el valor de los parámetros asociados a ese modelo ( $\mu$ y $\sigma^2$ )
+Para el caso de la distribución normal, simulemos el resultado de una prueba realizada por 100 estudiantes. Para ello se requiere conocer el valor de los parámetros asociados a ese modelo ( $\mu$ y $\sigma^2$ )
 
 Para el caso supongamos que $\mu = 120$ y $\sigma = 20$
 
 ```{r}
-# round() , función para redondear a cero cifras decimanes
+# round() , función para redondear a cero cifras decimales
 round(rnorm(100,120,20),0) 
 
 

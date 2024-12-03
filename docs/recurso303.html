@@ -14,7 +14,7 @@
 
 <title> Variables aleatorias</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -317,7 +317,7 @@ espacio muestral.</p>
 considera <strong>DISCRETA</strong> si su rango <span
 class="math inline">\(R_{_{X}}\)</span> es un conjunto finito o infinito
 numerable de valores, por lo general procede del conteo y en la gran
-mayoria de casos empieza por <strong>número de…</strong></p>
+mayoría de casos empieza por <strong>número de…</strong></p>
 <p>Se considera variable aleatoria <strong>CONTINUA</strong> si su rango
 <span class="math inline">\(R_{_{X}}\)</span> es un conjunto de valores
 infinito no numerable y generalmente corresponde a unión de intervalos.
@@ -326,15 +326,15 @@ altura, distancia….</p>
 <p><br/></p>
 <p>En todos los casos se caracterizan por</p>
 <ul>
-<li><span class="math inline">\(f(x)\)</span> : función de distribución
+<li><span class="math inline">\(f(x)\)</span> : Función de distribución
 de probabilidad (variables discretas), función de distribución de
 densidad (variables continuas)</li>
-<li><span class="math inline">\(F(x)\)</span> : función de probabilidad
+<li><span class="math inline">\(F(x)\)</span> : Función de probabilidad
 acumulada</li>
-<li><span class="math inline">\(E[X]\)</span> : valor esperado</li>
-<li><span class="math inline">\(V[X]\)</span> : varianza</li>
-<li>función característica</li>
-<li>función generadora de momentos</li>
+<li><span class="math inline">\(E[X]\)</span> : Valor esperado</li>
+<li><span class="math inline">\(V[X]\)</span> : Varianza</li>
+<li>Función característica</li>
+<li>Función generadora de momentos</li>
 </ul>
 <p>entre otras</p>
 <p><br/></p>
@@ -494,7 +494,7 @@ class="math inline">\(k\)</span> se define como:</p>
 <p><br/><br/></p>
 <p>Se define la varianza como la diferencia entre el segundo momento y
 el cuadrado del primer momento</p>
-<p><span class="math inline">\(V[X] = E[X^{2}]-(E[X])^{2} =
+<p><span class="math inline">\(V[X] = E[X^{2}]-(E[X])^{2}  =
 E[X^{2}]-\mu^{2}\)</span></p>
 <p><br/><br/></p>
 <div id="propiedades-de-la-varianza" class="section level4">
@@ -504,7 +504,7 @@ varianza</strong></span></h4>
 <li><p><span class="math inline">\(V[X] \geq 0\)</span></p></li>
 <li><p><span class="math inline">\(V[k] = 0\)</span>, para todo número
 real <span class="math inline">\(k\)</span></p></li>
-<li><p><span class="math inline">\(V[X + k] = V[X]\)</span>, para todo
+<li><p><span class="math inline">\(V[X + k]  = V[X]\)</span>, para todo
 número real <span class="math inline">\(k\)</span></p></li>
 <li><p><span class="math inline">\(V[kX] = k^{2}V[X]\)</span>, para todo
 número real <span class="math inline">\(k\)</span></p></li>
@@ -606,24 +606,24 @@ partes:</p>
 <p>La primera parte es una letra que identifica el propósito de la
 función. <br/><br/></p>
 <ul>
-<li><p><em>d</em> : función de distribución de probabilidad <span
+<li><p><em>d</em> : Función de distribución de probabilidad <span
 class="math inline">\(f(x)= P(X=x)\)</span>, para el caso discreto. En
 el caso de las variables continuas representa la función de densidad de
 probabilidad <span class="math inline">\(f(x)\)</span></p></li>
-<li><p><em>p</em> : función de probabilidad acumulada <span
+<li><p><em>p</em> : Función de probabilidad acumulada <span
 class="math inline">\(F(x) = P(X \leq x)\)</span></p></li>
-<li><p><em>q</em> : percentil <span
+<li><p><em>q</em> : Percentil <span
 class="math inline">\(X_p\)</span></p></li>
-<li><p><em>r</em> : generador de números aleatorios</p></li>
+<li><p><em>r</em> : Generador de números aleatorios</p></li>
 </ul>
 <p><br/><br/></p>
-<p>La siguiene tabla presenta estas las funciones para los principales
+<p>La siguiente tabla presenta estas las funciones para los principales
 modelos tanto discretos como continuos</p>
 <p><br/><br/></p>
 <table>
 <thead>
 <tr class="header">
-<th align="left"><em>modelo</em></th>
+<th align="left"><em>Modelo</em></th>
 <th align="left"><span class="math inline">\(F(x)\)</span></th>
 <th align="left"><span class="math inline">\(X_{p}\)</span></th>
 <th align="left"><span class="math inline">\(f(x)\)</span></th>
@@ -632,7 +632,7 @@ modelos tanto discretos como continuos</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>discretos</strong></td>
+<td align="left"><strong>Discretos</strong></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -674,7 +674,7 @@ modelos tanto discretos como continuos</p>
 <td align="left">rnbinom</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>continuos</strong></td>
+<td align="left"><strong>Continuos</strong></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -774,21 +774,21 @@ uso de las ayudas de R así:</p>
 <tbody>
 <tr class="odd">
 <td align="center">p</td>
-<td align="left">función de distribución acumulada <span
+<td align="left">Función de distribución acumulada <span
 class="math inline">\(F(x)\)</span></td>
 </tr>
 <tr class="even">
 <td align="center">q</td>
-<td align="left">percentil</td>
+<td align="left">Percentil</td>
 </tr>
 <tr class="odd">
 <td align="center">d</td>
-<td align="left">densidad de probabilidad <span
+<td align="left">Densidad de probabilidad <span
 class="math inline">\(P(X=x)\)</span></td>
 </tr>
 <tr class="even">
 <td align="center">r</td>
-<td align="left">variable aleatoria</td>
+<td align="left">Variable aleatoria</td>
 </tr>
 </tbody>
 </table>
@@ -798,14 +798,14 @@ class="math inline">\(P(X=x)\)</span></td>
 </div>
 <div id="modelo-discreto-binomial" class="section level3">
 <h3>Modelo discreto : <strong>binomial</strong></h3>
-<p>Una variable que se distrbuye binomial es la que procede de un
-experimento bionomial que se puede describir de la siguiente forma:</p>
+<p>Una variable que se distribuye binomial es la que procede de un
+experimento binomial que se puede describir de la siguiente forma:</p>
 <ul>
 <li>El experimento está compuesto de <span
 class="math inline">\(n\)</span> ensayos independientes</li>
-<li>Cada ensayo tiene unicamente dos posibles resultados:
+<li>Cada ensayo tiene únicamente dos posibles resultados:
 <strong>Exito</strong> o <strong>Fracaso</strong>.</li>
-<li>La probabilidad de Exito se mantiene constante para los <span
+<li>La probabilidad de Éxito se mantiene constante para los <span
 class="math inline">\(n\)</span> ensayo y es igual a <span
 class="math inline">\(p\)</span>. La probabilidad de Fracaso es : <span
 class="math inline">\(1-p = q\)</span></li>
@@ -842,7 +842,7 @@ x=0,1,2, \ldots, n   \\
 p=0.60)\)</span></p>
 <pre class="r"><code>library(ggplot2)</code></pre>
 <pre><code>
-Attaching package: &#39;ggplot2&#39;</code></pre>
+Adjuntando el paquete: &#39;ggplot2&#39;</code></pre>
 <pre><code>The following object is masked from &#39;package:NLP&#39;:
 
     annotate</code></pre>
@@ -858,8 +858,8 @@ ggplot(dat) + geom_point(aes(x, fx),colour = &quot;#FF7F00&quot;, size = 2) +
                      labels = c(&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;10&#39;))</code></pre>
 <p><img src="recurso303_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><br/></p>
-<p>Para calcular la probabidad de obtener exactamente 7 exitos, se
-evalua en la función de distribución del modelo binomial</p>
+<p>Para calcular la probabilidad de obtener exactamente 7 éxitos, se
+evalúa en la función de distribución del modelo binomial</p>
 <p><span class="math display">\[ f(x) = P(X=7) = \dbinom{10}{7} 0.60^{7}
 (1-0.60)^{(10-7)}\]</span> <br/></p>
 <p>En R este calculo se obtiene con la función <code>dbinom()</code></p>
@@ -916,15 +916,15 @@ intervalo centrado <span class="math display">\[(\mu - 3\sigma ; \mu +
 </ul></li>
 </ul></li>
 </ul>
-<p>Su distribución fué planteada por el matemático francés del siglo 18,
+<p>Su distribución fue planteada por el matemático francés del siglo 18,
 Abraham de Moivre, quien a partir de la distribución Binomial, con <span
 class="math inline">\(n=2\)</span> empezó a aumentar su tamaño hasta
 observar que se formaba una distribución en forma de campana. Este mismo
 comportamiento fué detectado por Galileo en el siglo 17, al observar los
 errores producto de sus mediciones en astronomía. El modelo como se
 conoce actualmente fue propuesto de manera simultánea por los
-cientificos Robert Adrain y Carl Friedrich Gauss, quien finalmente le
-dió el nombre.</p>
+científicos Robert Adrain y Carl Friedrich Gauss, quien finalmente le
+dio el nombre.</p>
 <p><strong>Función de densidad de probabilidad</strong></p>
 <br/>
 <div class="content-box-blue">
@@ -965,6 +965,8 @@ valores:</p>
 <p><br/></p>
 <pre class="r"><code>library(ggfortify)
 ggdistribution(dnorm, seq(30, 210, 0.1), mean = 120, sd = 20,fill = &quot;#0EB0C6&quot;)</code></pre>
+<pre><code>Warning in grid.Call.graphics(C_polygon, x$x, x$y, index): semi-transparencia
+no esta soportado en este dispositivo: reportado solo una vez por pagina</code></pre>
 <p><img src="recurso303_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 <p>En este caso si se requiere calcular la probabilidad de obtener
@@ -1004,16 +1006,16 @@ class="section level3">
 <h3><span style="color:#034a94"> <strong>Generación de números
 aleatorios asociados a una distribución de
 probabilidad</strong></span></h3>
-<p>Una de las herramientas que nos permite la validación de propidedades
-y teoremas, además de realizar procedimenientos estadisticos de manera
-sintetica, es la simulación.</p>
+<p>Una de las herramientas que nos permite la validación de propiedades
+y teoremas, además de realizar procedimientos estadísticos de manera
+sintética, es la simulación.</p>
 <p>Este procedimiento consiste en generar de manera artificial valores
-asociados auna distribución de probabilidad.</p>
+asociados a una distribución de probabilidad.</p>
 <p><br/><br/></p>
 </div>
 <div id="ejemplo-2" class="section level3">
 <h3><span style="color:#FF7F00"><strong>Ejemplo</strong></span></h3>
-<p>El número de articulos defectuosos encontrados en casas de 10
+<p>El número de artículos defectuosos encontrados en casas de 10
 unidades se puede simular a partir del conocimiento de los parámetros n
 y p de una distribución binomial.</p>
 <p>Supongamos que n=10 (número de unidades por paquete) y p=0.10
@@ -1029,14 +1031,14 @@ revisión de 100 cajas</p>
 </div>
 <div id="ejemplo-3" class="section level3">
 <h3><span style="color:#FF7F00"><strong>Ejemplo</strong></span></h3>
-<p>Para el caso de la distribició normal, simulemos el resultado de una
+<p>Para el caso de la distribución normal, simulemos el resultado de una
 prueba realizada por 100 estudiantes. Para ello se requiere conocer el
 valor de los parámetros asociados a ese modelo ( <span
 class="math inline">\(\mu\)</span> y <span
 class="math inline">\(\sigma^2\)</span> )</p>
 <p>Para el caso supongamos que <span class="math inline">\(\mu =
 120\)</span> y <span class="math inline">\(\sigma = 20\)</span></p>
-<pre class="r"><code># round() , función para redondear a cero cifras decimanes
+<pre class="r"><code># round() , función para redondear a cero cifras decimales
 round(rnorm(100,120,20),0) </code></pre>
 <pre><code>  [1] 117 113 125 124 160 161 113 122 124 117 142 123 124 123 105 155 114  87
  [19]  94 102 138 127 109  81 119 118  63 110 129  98 102 143 115 150 138 126

@@ -14,7 +14,7 @@
 
 <title> Introducción a Probabilidad</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -34,7 +34,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="site_libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
 <script src="site_libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
 <script src="site_libs/wordcloud2-0.0.1/hover.js"></script>
@@ -333,11 +334,11 @@ wordcloud2(data = t,
            color=rep_len( c(&quot;#F27F0C&quot;, &quot;#F7AD19&quot;, &quot;#053F5C&quot;, &quot;#429EBD&quot;, &quot;#034A94&quot;), 
            nrow(demoFreq)),
            rotateRatio = 0)</code></pre>
-<div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1b4ff99564eb6e8884a5" style="width:672px;height:480px;"></div>
+<div class="wordcloud2 html-widget html-fill-item" id="htmlwidget-1b4ff99564eb6e8884a5" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-1b4ff99564eb6e8884a5">{"x":{"word":["[0,1]","aleatorio","azar","Bayes","cierto","conjunto","De Meré","Decisión","deterministico","enfoque clásico","enfoque frecuentisto","enfoque subjetivo","evento","experimento","Fermat","Gauss","imposible","incertidumbre","incierto","Indicador","interseción","Kolmogorov","Laplace","marginal","Pascal","Probabilidad","probabilidad condicional","probabilidad conjunta","probabilidad marginal","probable","Riesgo","Teorema de Bayes","unión"],"freq":[4,8,8,5,8,8,6,7,8,4,4,4,4,4,6,5,8,8,8,6,4,5,5,4,6,20,6,5,4,8,5,7,4],"fontFamily":"Segoe UI","fontWeight":"bold","color":["#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C","#F7AD19","#053F5C","#429EBD","#034A94","#F27F0C"],"minSize":0,"weightFactor":4.5,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
 <p>La probabilidad es un concepto desarrollado en el siglo XVII, a
 partir de la contribución de los matemáticos Blaise Pascal y Pierre de
-Fermat. Esta contribución fué originada a traves de correspondencia en
+Fermat. Esta contribución fué originada a través de correspondencia en
 la que se plantean las soluciones al problema planteado por un noble
 sobre la interrupción de un juego de dados antes de que se alcanzara la
 puntuación necesaria para ganar (posiblemente debido a la prioridad de
@@ -349,7 +350,7 @@ situación actual del juego.</p>
 probabilidad al abordar este problema, de esta manera introducen los
 conceptos básicos de la probabilidad bajo en enfoque clásico</p>
 <p><br/></p>
-<p>Además de ellos tambien se conocen trabajos como el de Jacob
+<p>Además de ellos también se conocen trabajos como el de Jacob
 Bernoulli realizó contribuciones en el campo de la astronomía y otras
 aplicaciones que se plasman en el libro “Ars Conjectandi” en 1713. En
 este libro, Jacob Bernoulli introdujo la ley de los grandes números, que
@@ -357,13 +358,13 @@ establece que a medida que aumenta el número de repeticiones de un
 experimento aleatorio, la frecuencia relativa de un evento tiende a
 acercarse a su probabilidad teórica.</p>
 <p><br/></p>
-<p>Hoy dia este concepto esta implicito en todos los campos como la
-teoría Bayesiana basada en el teorema de Bayes, Metodo de Montecarlos
+<p>Hoy día este concepto esta implícito en todos los campos como la
+teoría Bayesiana basada en el teorema de Bayes, Metodos de Montecarlo
 empleados en la simulación de eventos complejos, aportes al desarrollo
-de la ineligendia artificial principalmente en lo que respecta al
-aprendizaje auomatico y el reconocimiento de patrones, la big data y el
-aprendizaje automatico y la probabilidad cuanticaen el ambito de la
-fisica moderna.</p>
+de la inteligencia artificial principalmente en lo que respecta al
+aprendizaje automático y el reconocimiento de patrones, la big data y el
+aprendizaje automático y la probabilidad cuántica en el ámbito de la
+física moderna.</p>
 <p><br/></p>
 <p>Hablar de probabilidad reúne una serie de conceptos, algunos de ellos
 se presentan en la nube de palabras. A continuación se definen los más
@@ -412,8 +413,17 @@ class="math inline">\(\{ (cc), (cs), (sc), (ss) \}\)</span></li>
 <div style="display: flex;">
 <div>
 <ul>
-<li><span
-class="math inline">\(\begin{equation*}  S_{2}=\left\{  \begin{array}{cccccc}  &amp;(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&amp;\\  &amp;(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&amp;\\  &amp;(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&amp;\\  &amp;(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&amp;\\  &amp;(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&amp;\\  &amp;(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&amp;  \end{array}  \right\}
+<li><span class="math inline">\(\begin{equation*}
+  S_{2}=\left\{
+  \begin{array}{cccccc}
+      &amp;(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)&amp;\\
+      &amp;(2,1),(2,2),(2,3),(2,4),(2,5),(2,6)&amp;\\
+      &amp;(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)&amp;\\
+      &amp;(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)&amp;\\
+      &amp;(5,1),(5,2),(5,3),(5,4),(5,5),(5,6)&amp;\\
+      &amp;(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)&amp;
+  \end{array}
+  \right\}
 \end{equation*}\)</span></li>
 </ul>
 </div>
@@ -424,8 +434,8 @@ class="math inline">\(\begin{equation*}  S_{2}=\left\{  \begin{array}{cccccc}  &
 <p><br/><br/></p>
 <ul>
 <li><span class="math inline">\(S_{3}\)</span>= <span
-class="math inline">\(\{ x \in \mathbb{R} | 0 \leq x \leq 5
-\}\)</span></li>
+class="math inline">\(\{ x \in \mathbb{R} | 0 \leq x \leq
+5   \}\)</span></li>
 </ul>
 <p><br/></p>
 <ul>
@@ -546,7 +556,7 @@ class="math inline">\(n\)</span>.</p>
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <ul>
 <li>Probabilidad de ganar un examen</li>
-<li>Probabilidad de realizar más de 10 ventas en un dia
+<li>Probabilidad de realizar más de 10 ventas en un día
 <br/><br/><br/></li>
 </ul>
 </div>
@@ -575,8 +585,8 @@ auto</li>
 <div id="axiomas-de-probabilidad" class="section level2">
 <h2><span style="color:#034a94"><strong>Axiomas de
 probabilidad</strong></span></h2>
-<p>Los siuientes cinco axiomas corresponde a las condiciones mínimas que
-se deben verificar sobre los elemtos basícos (<span
+<p>Los siguientes cinco axiomas corresponde a las condiciones mínimas
+que se deben verificar sobre los elementos básicos (<span
 class="math inline">\(E\)</span>, <span
 class="math inline">\(S\)</span>, <span
 class="math inline">\(A\)</span>). Fueron formuladas por Andréi

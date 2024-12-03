@@ -10,9 +10,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
-# install.packages("devtools") # solo una vez
-#devtools::install_github("dgonxalex80/paqueteNIV") # descarga paqueteDEG
-library(paqueteNIV) # activa paqueteDEG
+# install.packages("devtools") # Solo una vez
+#devtools::install_github("Centromagis/paqueteNIV") # Descarga paqueteDEG
+# library(paqueteNIV) # Activa paqueteDEG
 
 
 ```
@@ -21,7 +21,7 @@ library(paqueteNIV) # activa paqueteDEG
 
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
-Iniciaremos con una tabla cruzada o de doble entrada que representa los valores obtenidos para dos características cualitativas **A** y **B** para 900 registros 
+Iniciaremos con una tabla cruzada o de doble entrada que representa los valores obtenidos para dos características cualitativas **A** y **B** para 900 registros.
 
 <br/><br/>
 
@@ -35,7 +35,7 @@ knitr::include_graphics("img/tabla2_22a.png")
 
 
 ```{r}
-# se crea la tabla 
+# Se crea la tabla 
 x=c(460,140,40,260)
 t=matrix(x,nrow=2)
 colnames(t)=c("A","A'")
@@ -73,13 +73,13 @@ Corresponde a la probabilidad de que ocurra un evento simple. También se le lla
 
 <br/>
 
-* $P(A) = 600/900 = 0.667$ : probabilidad de que ocurra $A$
+* $P(A) = 600/900 = 0.667$ : Probabilidad de que ocurra $A$
 
-* $P(A') = 300/900 = 0.333$ : probabilidad de que no ocurra $A$
+* $P(A') = 300/900 = 0.333$ : Probabilidad de que no ocurra $A$
 
-* $P(B) = 500/900 = 0.556$ : probabilidad de que ocurra $B$
+* $P(B) = 500/900 = 0.556$ : Probabilidad de que ocurra $B$
 
-* $P(B') = 400/900 = 0.444$ : probabilidad de que no ocurra $B$
+* $P(B') = 400/900 = 0.444$ : Probabilidad de que no ocurra $B$
 
 
 <br/><br/><br/>
@@ -180,12 +180,12 @@ Se puede resaltar los conjutos que conforman el evento $B$
 knitr::include_graphics("img/particion3_1122.png")
 ```
 </br>
-**Figura 2.3** Evento B como la unión de intercepciones $A_{i} \cap B$
+**Figura 2.3** Evento B como la unión de intersecciones $A_{i} \cap B$
 </center>
 
 <br/><br/>
 
-Tambien podemos recostruir $B$ como :
+También podemos reconstruir $B$ como :
 
 $B = (A_{1} \cap B) \cup (A_{2} \cap B) \cup (A_{3} \cap B) \cup (A_{4} \cap B) \cup (A_{5} \cap B)$
 
@@ -215,7 +215,7 @@ $$P(A)=P(E_{1})P(A|E_{1})+ P(E_{2})P(A|E_{2})+ P(E_{3})P(A|E_{3})+ \dots P(E_{k}
 El **teorema de Bayes**, fue propuesto por  el matemático británico Thomas Bayes, es una relación que permite determinar la probabilidad condicional. La probabilidad condicional es la probabilidad de que ocurra un resultado, basado en un resultado previo. El **teorema de Bayes** permite ajustar las probabilidades dada nueva información.
 
 <div class="content-box-blue">
-Dado una serie de eventos que conforma una partición $E_{1}$, $E_{2}$, $E_{3}$, $\dots$, $E_{k}$ , que son mutuamente excluyentes y exhaustivos, con probabilidad a priori $P(E_{1})$, $P(E_{2})$ $P(E_{3})$, $\dots$, $P(E_{k})$. Si ocurre un evento $A$, la probabilidad a posteriori de $E_{i}$ dados $A$, es la probabilidad condicional :
+Dado una serie de eventos que conforma una partición $E_{1}$, $E_{2}$, $E_{3}$, $\dots$, $E_{k}$ , que son mutuamente excluyentes y exhaustivos, con probabilidad a priori $P(E_{1})$, $P(E_{2})$ $P(E_{3})$, $\dots$, $P(E_{k})$. Si ocurre un evento $A$, la probabilidad a posteriori de $E_{i}$ dados $A$, es la probabilidad condicional:
 
 $$P(E_{i}|A)=\dfrac{P(E_{i} \cap A)}{P(A)}= \dfrac{P(E_{i}) P(A|E_{i})}{\displaystyle\sum_{j=1}^{k} P(E_{j})P(A|E_{j})} $$
 </div>
@@ -296,7 +296,7 @@ library(readr)
 library(rpart)
 library(rattle)
 library(rpart.plot)
-library(paqueteNIV)
+# library(paqueteNIV)
 data("titanic3")
 
 sobrevive.model <- rpart(survived ~ ., data = ptitanic, cp = .02)
@@ -313,30 +313,36 @@ rpart.plot(sobrevive.model,
 En el primer nivel de información hace referencia a la probabilidad de sobrevivir (0.38)
 
 ```{r}
-t=table(titanic3$survived)
+titanic3 <- load("data/titanic3.rda")
+
+#t=table(titanic3$survived)
+
+
+
 prop.table(t)
 ```
 
-* $P(\text{survived} = 1) = 0.381971$ : probabilidad de sobrevivir en un accidente similar
+* $P(\text{survived} = 1) = 0.381971$ : Probabilidad de sobrevivir en un accidente similar
 
-* $P(\text{survived} = 0) = 0.618029$ : probabilidad de no sobrevivir en un acdidente similar
+* $P(\text{survived} = 0) = 0.618029$ : Probabilidad de no sobrevivir en un accidente similar
 
 <br/><br/>
 
-En el segundo nivel se representan las probabilidades condicionales a partir de conocer que el pasajero sobrevivió, con relación al sexo . 
+En el segundo nivel se representan las probabilidades condicionales a partir de conocer que el pasajero sobrevivió, con relación al sexo. 
 
 <br/>
 
 ```{r}
+load("data/titanic3.rda")
 t2=table(titanic3$survived,titanic3$sex)
 prop.table(t2,2)
 ```
 
 <br/>
 
-* $P(\text{female}|\text{survived}) = 0.72746778$ : si conocemos que sobrevivió, la probabilidad de que sea una mujer
+* $P(\text{female}|\text{survived}) = 0.72746778$ : Si conocemos que sobrevivió, la probabilidad de que sea una mujer
 
-* $P(\text{male}|\text{survived}) = 0.1909846$ : si se conoce que sobrevivió, la probabilidad de que sea hombre 
+* $P(\text{male}|\text{survived}) = 0.1909846$ : Si se conoce que sobrevivió, la probabilidad de que sea hombre 
 
 <br/><br/>
 

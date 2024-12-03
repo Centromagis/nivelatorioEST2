@@ -64,7 +64,7 @@ wordcloud2(data = t,
 ```
 
 
-La probabilidad es un concepto desarrollado en el siglo XVII, a partir de la contribución de los matemáticos Blaise Pascal y Pierre de Fermat. Esta contribución fué originada a traves de correspondencia en la que se plantean las soluciones al problema planteado por un noble sobre la  interrupción de un juego de dados antes de que se alcanzara la puntuación necesaria para ganar (posiblemente debido a la prioridad de atender asustos relacionados con la guerra), y la pregunta era cómo dividir equitativamente el premio entre los jugadores en función de la situación actual del juego. 
+La probabilidad es un concepto desarrollado en el siglo XVII, a partir de la contribución de los matemáticos Blaise Pascal y Pierre de Fermat. Esta contribución fué originada a través de correspondencia en la que se plantean las soluciones al problema planteado por un noble sobre la  interrupción de un juego de dados antes de que se alcanzara la puntuación necesaria para ganar (posiblemente debido a la prioridad de atender asustos relacionados con la guerra), y la pregunta era cómo dividir equitativamente el premio entre los jugadores en función de la situación actual del juego. 
 
 <br/>
 
@@ -72,11 +72,11 @@ Pascal y Fermat desarrollaron los fundamentos de la teoría de la probabilidad a
 
 <br/>
 
-Además de ellos tambien se conocen trabajos como el de Jacob Bernoulli realizó contribuciones en el campo de la astronomía y otras aplicaciones que se plasman en el libro "Ars Conjectandi" en 1713. En este libro, Jacob Bernoulli introdujo la ley de los grandes números, que establece que a medida que aumenta el número de repeticiones de un experimento aleatorio, la frecuencia relativa de un evento tiende a acercarse a su probabilidad teórica.
+Además de ellos también se conocen trabajos como el de Jacob Bernoulli realizó contribuciones en el campo de la astronomía y otras aplicaciones que se plasman en el libro "Ars Conjectandi" en 1713. En este libro, Jacob Bernoulli introdujo la ley de los grandes números, que establece que a medida que aumenta el número de repeticiones de un experimento aleatorio, la frecuencia relativa de un evento tiende a acercarse a su probabilidad teórica.
 
 <br/>
 
-Hoy dia este concepto esta implicito en todos los campos como la teoría Bayesiana basada en el teorema de Bayes, Metodo de Montecarlos empleados en la simulación de eventos complejos, aportes al desarrollo de la ineligendia artificial principalmente en lo que respecta al aprendizaje auomatico y el reconocimiento de patrones, la big data y el aprendizaje automatico y la probabilidad cuanticaen el ambito de la fisica moderna.
+Hoy día este concepto esta implícito en todos los campos como la teoría Bayesiana basada en el teorema de Bayes, Metodos de Montecarlo empleados en la simulación de eventos complejos, aportes al desarrollo de la inteligencia artificial principalmente en lo que respecta al aprendizaje automático y el reconocimiento de patrones, la big data y el aprendizaje automático y la probabilidad cuántica en el ámbito de la física moderna.
 
 <br/>
 
@@ -223,7 +223,7 @@ $$\lim_{n \to{+}\infty} P(A)=\Bigg[ \dfrac{\text{número de veces que ocurre A}}
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 * Probabilidad de ganar un examen
-* Probabilidad de realizar más de 10 ventas en un dia
+* Probabilidad de realizar más de 10 ventas en un día
 <br/><br/><br/>
 
 ### <span style="color:#034a94">**Enfoque subjetivo**</span> 
@@ -247,7 +247,7 @@ $$P(A)   \gets \text{Experto}$$
 
 ## <span style="color:#034a94">**Axiomas de probabilidad**</span>
 
-Los siuientes cinco axiomas corresponde a las condiciones mínimas que se deben verificar sobre los elemtos basícos ($E$, $S$, $A$). Fueron formuladas por Andréi Kolmogórov (1933) 
+Los siguientes cinco axiomas corresponde a las condiciones mínimas que se deben verificar sobre los elementos básicos ($E$, $S$, $A$). Fueron formuladas por Andréi Kolmogórov (1933) 
 
 
 <div class="content-box-blue">
